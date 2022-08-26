@@ -17,15 +17,15 @@ This repository aims to explore web sockets on a high level through explanation 
   <Summary>Table of Contents</summary>
     <ul>
       <li><a href= "#Intro">Introduction</a></li>
-      <li><a href= "#What-is-the-client/server-model?">What is the client/server model?</a></li>
-      <li><a href= "#How-does-an-HTTP-request-function?">How does an HTTP request function?</a></li>
-      <li><a href= "#What-is-a-web-socket?">What is a web socket?</a></li>
+      <li><a href= "#What-is-the-client/server-model">What is the client/server model?</a></li>
+      <li><a href= "#How-does-an-HTTP-request-function">How does an HTTP request function?</a></li>
+      <li><a href= "#What-is-a-web-socket">What is a web socket?</a></li>
     </ul>
 </details>
 
 <br>
 
-## What is the client/server model?
+## What is the client/server model
 <p>Prior to diving into Web Socket, it is important to briefly go over how a client/server model functions on a high level.</p>
 <p>In this model, data is stored and managed by a server. This data could be login information,a database of products, a database of client information, web pages, or any other information that someone might want to access.</p>
 <p>The client is the end user who wants to access or modify this data.</p>
@@ -35,7 +35,7 @@ This repository aims to explore web sockets on a high level through explanation 
 
 <br>
 
-## How does an HTTP request function?
+## How does an HTTP request function
 <p>An HTTP request functions as a SINGLE interaction between a client and a server. The client reaches out to the server and will generally ask for data to be given to it (a GET request) or to modify data on the server with supplied information (a PUT request). Once the response is sent from the server, and confirmed received (or times out) the connection is closed.</p>
 
 <p>Below is an example of a request from a client using axios, which is a module to simplify requests for JavaScript.</p>
@@ -75,6 +75,6 @@ curl https://github.com/danekf/web-socket-exploration#What%20is%20a%20web%20sock
   
 <br>
 
-## What is a web socket?
+## What is a web socket
 
 
