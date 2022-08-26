@@ -69,6 +69,9 @@ curl https://github.com/danekf/web-socket-exploration#What%20is%20a%20web%20sock
 <a href= 'https://betterprogramming.pub/sending-type-safe-http-requests-with-go-eb5bd1f91558'>
   <img src="images/HTTP Request.png">
   </a>
+
+<p>Unfortunately this method of data transfer has its limitations. suppose we wanted to start a chat on a webpage. How would we handle this?We might need a client to check at intervals for new data but how would we set this interval? Do we really want to establish a brand new connection every time we need to get or send data? It would be ideal to have a connection where the client and server remain connected until we are done chatting.</p>
+<p>This is the issue that web socket attempts to solve.</p>
   
 <br>
 
