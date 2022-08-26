@@ -20,7 +20,9 @@ This repository aims to explore web sockets on a high level through explanation 
       <li><a href= "#What-is-the-client/server-model">What is the client/server model?</a></li>
       <li><a href= "#How-does-an-HTTP-request-function">How does an HTTP request function?</a></li>
       <li><a href= "#What-is-a-web-socket">What is a web socket?</a></li>
-      <li><a href= "#A Deeper Dive">A Deeper Dive</a></li>
+      <li><a href= "#A-Deeper-Dive">A Deeper Dive</a></li>
+      <li><a href= "#Managed-Solution-VS-Self-Hosted-Server">Managed Solution VS Self Hosted Server</a></li>
+      <li><a href= "#Final Thoughts">Final Thoughts</a></li>
     </ul>
 </details>
 
@@ -106,7 +108,23 @@ ws://examplewebsite.com:8080/serverToInteractwith.php
 <br>
 
 ## A Deeper Dive
-<p>Now that we have an understanding of what a websocket is, and WHY it exists. The next step is to run through an example. 
+<p>Now that we have an understanding of what a websocket is, and WHY it exists. The next step is to run through an example of a simple web socket server/client.</p>
+<p>The chosen example will use NodeJs and the websocket npm package to create a simple websocket server and client.</p>
+<a href = https://github.com/danekf/web-socket-exploration/tree/main/Web_Socket_example>Click here to explore my solution</a>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<br>
+
+## Managed Solution VS Self Hosted Server
+<p>When looking at implementing a web socket, the question final question is whether to self host a solution or use a third party managed solution.</p>
+<p>For self hosting, popular servers include <a href='https://faye.jcoglan.com/'>FAYE</a> for Ruby or <a href='https://www.npmjs.com/package/websocket'>websocket</a> in NodeJS (as seen with the Deeper Dive example). A self hosted solution, while the most complex solution, is the most flexible. You are able to tailor each step of the process yourself and optimize yourself.</p>
+<p>However, while it is easy to setup a simple web socket server and client, it may be of interest to leverage a managed solution.</p>
+
+<p>A managed solution, such as <a href="">Pusher</a> offer pre-built solutions to lower development time and allows your team to focus on what you want your application to achieve, rather than implementing the web socket. They also have the ability to scale solutions easily as your application use grows, once again lowering the development burden. For a smaller team this is a very attractive prospect and is well worth considering when you want to focus your teams attention to other features.</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<br>
+
+## Final Thoughts
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
