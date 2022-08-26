@@ -36,34 +36,42 @@ This repository aims to explore web sockets on a high level through explanation 
 <br>
 
 ## How does an HTTP request function?
-<p>An HTTP request functions as a SINGLE interaction between a client and a server. The client reaches out to the server and will generally ask for data to be given to it (a GET request) or to modify data on the server with supplied information (a PUT request).</p>
+<p>An HTTP request functions as a SINGLE interaction between a client and a server. The client reaches out to the server and will generally ask for data to be given to it (a GET request) or to modify data on the server with supplied information (a PUT request). Once the response is sent from the server, and confirmed received (or times out) the connection is closed.</p>
 
 <p>Below is an example of a request from a client using axios, which is a module to simplify requests for JavaScript.</p>
 
 ```sh
+#This example shows how axios can be used to make a request to a website in JavaScript
+const axios = require('axios');
+
 const getThisRepo = () =>{
   axios
     .get('https://github.com/danekf/web-socket-exploration#What%20is%20a%20web%20socket?')
-    .then(res => {
-      console.log(`statusCode: ${res.status}`);
-      console.log(res);
+    .then(response => {
+      #Do something is a placeholder function to show where axios could do something with the received response.
+      doSomething(response);
     })
-    .catch(error => {
-      console.error(error);
-    });
 }
 ```
 
-<p>In this example, the ".get" shows that the client is requesting a website from the server. If we were pushing data to the server, a ".put" could be used. The server will then repond with all the data required to render and run the webpage.</p>
+<p>This example illustrates one way the browser would have reached out to a DNS provider to receive THIS github repository. The client formulates a '.get' request and 'then' waits for the response from the server. Once a response is received, the connection is closed and then "doesSomething" with the response. </p>
 
-Alternatively we could make a request using the command line command CURL.
+Alternatively we could make a request using the command line command CURL. In this example we would just get the raw data required to render and run the webpage. This can be run in any modern terminal. 
 <br>
 
-``sh
+```
 curl https://github.com/danekf/web-socket-exploration#What%20is%20a%20web%20socket?
-``
+```
 
+<p>In either case, this example demonstrates that a request is made, the server processes the request and then sends the data to the client. At this point the connection is closed. In order for the client to receive more data the client must make a new request to the server.<p>
+<p>The image below, taken from betterprogramming, illustrates this interaction clearly.
+
+<a href= 'https://betterprogramming.pub/sending-type-safe-http-requests-with-go-eb5bd1f91558'>
+  <img src="images/HTTP Request.png">
+  </a>
+  
 <br>
 
 ## What is a web socket?
+
 
