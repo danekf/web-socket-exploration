@@ -93,7 +93,7 @@ get ws://examplewebsite.com:8080/ HTTP/1.1
 
 <p>Here is an example image, taken from geeksforgeeks.org which illustrates this clearly.</p>
 <div align="center">
-    <a href= "https://media.geeksforgeeks.org/wp-content/uploads/20191203183648/WebSocket-Connection.png">
+    <a href= "https://www.geeksforgeeks.org/what-is-web-socket-and-how-it-is-different-from-the-http/">
       <img src="images/WebSocket-Connection.png" width='50%'>
   </a>
 </div>
