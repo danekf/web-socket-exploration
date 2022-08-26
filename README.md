@@ -22,7 +22,7 @@ This repository aims to explore web sockets on a high level through explanation 
       <li><a href= "#What-is-a-web-socket">What is a web socket?</a></li>
       <li><a href= "#A-Deeper-Dive">A Deeper Dive</a></li>
       <li><a href= "#Managed-Solution-VS-Self-Hosted-Server">Managed Solution VS Self Hosted Server</a></li>
-      <li><a href= "#Final Thoughts">Final Thoughts</a></li>
+      <li><a href= "#Final-Thoughts">Final Thoughts</a></li>
     </ul>
 </details>
 
