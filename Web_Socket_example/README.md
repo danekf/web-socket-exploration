@@ -1,8 +1,7 @@
 <a name="readme-top"></a>
 <h1 align="center">Web Sockets, a nodeJS example.</h3>
-<br>
-
 <h2 align="Center">(<a href="https://github.com/danekf/web-socket-exploration">Return to main page</a>)</h2>  
+<br>
 
 <!--Table of Contents -->
 <details>
