@@ -1,0 +1,28 @@
+{
+  "name": "web-socket-exploration",
+  "version": "1.0.0",
+  "description": "Self guided exploration and writeup about web sockets. Explanation, use and examples ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danekf/web-socket-exploration.git"
+  },
+  "keywords": [
+    "nodejs",
+    "ruby",
+    "http",
+    "websocket"
+  ],
+  "author": "Danek Fill",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danekf/web-socket-exploration/issues"
+  },
+  "homepage": "https://github.com/danekf/web-socket-exploration#readme",
+  "dependencies": {
+    "ws": "^8.8.1"
+  }
+}

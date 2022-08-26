@@ -10,3 +10,8 @@
       <li><a href= "#Intro">Introduction</a></li>
     </ul>
 </details>
+
+## Intro
+<p>This section runs through a simple NodeJS websocket server and client.
+<br>
+<a href = "https://www.piesocket.com/blog/nodejs-websocket">Reference to walkthrough</a>
