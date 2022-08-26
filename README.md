@@ -17,9 +17,9 @@ This repository aims to explore web sockets on a high level through explanation 
   <Summary>Table of Contents</summary>
     <ul>
       <li><a href= "#Intro">Introduction</a></li>
-      <li><a href= "#What is the client/server model?">What is the client/server model?</a></li>
-      <li><a href= "#How does an HTTP request function?">How does an HTTP request function?</a></li>
-      <li><a href= "#What is a web socket?">What is a web socket?</a></li>
+      <li><a href= "#What-is-the-client/server-model?">What is the client/server model?</a></li>
+      <li><a href= "#How-does-an-HTTP-request-function?">How does an HTTP request function?</a></li>
+      <li><a href= "#What-is-a-web-socket?">What is a web socket?</a></li>
     </ul>
 </details>
 
