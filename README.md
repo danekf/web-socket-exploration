@@ -23,6 +23,7 @@ This repository aims to explore web sockets on a high level through explanation 
     </ul>
 </details>
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 
 ## What is the client/server model
@@ -33,6 +34,7 @@ This repository aims to explore web sockets on a high level through explanation 
 <br>
 <p>In order to use that data the client will make a request to the server, and the server will respond withthe formatted data. The major difference between an HTTP request and a web socket is with how exactly this communication is established.</p>
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 
 ## How does an HTTP request function
@@ -65,16 +67,37 @@ curl https://github.com/danekf/web-socket-exploration#What%20is%20a%20web%20sock
 
 <p>In either case, this example demonstrates that a request is made, the server processes the request and then sends the data to the client. At this point the connection is closed. In order for the client to receive more data the client must make a new request to the server.<p>
 <p>The image below, taken from betterprogramming, illustrates this interaction clearly.
+<div align="center">
+  <a href= 'https://betterprogramming.pub/sending-type-safe-http-requests-with-go-eb5bd1f91558'>
+    <img src="images/HTTP Request.png" width='50%' >
+    </a>
+</div>
 
-<a href= 'https://betterprogramming.pub/sending-type-safe-http-requests-with-go-eb5bd1f91558'>
-  <img src="images/HTTP Request.png">
-  </a>
+<p>Unfortunately this method of data transfer has its limitations. suppose we wanted to start a chat on a webpage. How would we handle this?We might need a client to check at intervals for new data but how would we set this interval? Do we really want to establish a brand new connection every time we need to get or send data? </p>
+<p>What if we looked at a more complex situation such as an online multiplayer game where data needs to be sent and received very quickly. Making multiple requests, and closing them each time would be much too intensive and introduce issues where data is not received in time.</p>
+<p>It would be ideal to ahve the client and server remain connected until the interaction reaches its conclusion, regardless of how long that may take. This is the issue that web socket attempts to solve.</p>
 
-<p>Unfortunately this method of data transfer has its limitations. suppose we wanted to start a chat on a webpage. How would we handle this?We might need a client to check at intervals for new data but how would we set this interval? Do we really want to establish a brand new connection every time we need to get or send data? It would be ideal to have a connection where the client and server remain connected until we are done chatting.</p>
-<p>This is the issue that web socket attempts to solve.</p>
-  
+<p align="right">(<a href="#readme-top">back to top</a>)</p>  
 <br>
 
 ## What is a web socket
+<p>A web socket is a protocol used in the client/server model, much like HTTP, but is a continous communication between the client and the server. The request begins much in the same way as an HTTP request but the requested address starts with 'ws:' rather than 'http:'.</p>
 
+<p>An example connection request from a client might include this line:</p>
+
+``
+get ws://examplewebsite.com:8080/ HTTP/1.1
+``
+<p>Once the server receives the request, instead of returning an HTTP response, it will returns a 'handshake' instead. This confirms to the client that the request was received and sends the data required to complete the connection.</p>
+<p>At shit point, the client and server will remain in constant communication until either one chooses to terminate the connection (or the connection is lost).</p>
+
+<p>Here is an example image, taken from geeksforgeeks.org which illustrates this clearly.</p>
+<div align="center">
+    <a href= "https://media.geeksforgeeks.org/wp-content/uploads/20191203183648/WebSocket-Connection.png">
+      <img src="images/WebSocket-Connection.png" width='50%'>
+  </a>
+</div>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<br>
 
