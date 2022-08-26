@@ -20,6 +20,7 @@ This repository aims to explore web sockets on a high level through explanation 
       <li><a href= "#What-is-the-client/server-model">What is the client/server model?</a></li>
       <li><a href= "#How-does-an-HTTP-request-function">How does an HTTP request function?</a></li>
       <li><a href= "#What-is-a-web-socket">What is a web socket?</a></li>
+      <li><a href= "#A Deeper Dive">A Deeper Dive</a></li>
     </ul>
 </details>
 
@@ -83,21 +84,29 @@ curl https://github.com/danekf/web-socket-exploration#What%20is%20a%20web%20sock
 ## What is a web socket
 <p>A web socket is a protocol used in the client/server model, much like HTTP, but is a continous communication between the client and the server. The request begins much in the same way as an HTTP request but the requested address starts with 'ws:' rather than 'http:'.</p>
 
-<p>An example connection request from a client might include this line:</p>
+<p>An example connection request from a client will include a line such as this:</p>
 
-``
-get ws://examplewebsite.com:8080/ HTTP/1.1
-``
+```sh
+# 8080 is an example dev port
+ws://examplewebsite.com:8080/serverToInteractwith.php
+```
 <p>Once the server receives the request, instead of returning an HTTP response, it will returns a 'handshake' instead. This confirms to the client that the request was received and sends the data required to complete the connection.</p>
-<p>At shit point, the client and server will remain in constant communication until either one chooses to terminate the connection (or the connection is lost).</p>
-
+<p>At this point, the client and server will remain in constant communication until either one chooses to terminate the connection (or the connection is lost). 
+<p></p>
 <p>Here is an example image, taken from geeksforgeeks.org which illustrates this clearly.</p>
 <div align="center">
     <a href= "https://www.geeksforgeeks.org/what-is-web-socket-and-how-it-is-different-from-the-http/">
       <img src="images/WebSocket-Connection.png" width='50%'>
   </a>
 </div>
+<p>Once the communication is established, both the client and the server can send data to each other in a full duplex manner. This means that they are both able to send data at any point, including when data is being sent by the other. This is a much more ideal protocol for examples such as a live chat, or for an online game.</p>
+<p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 
+## A Deeper Dive
+<p>Now that we have an understanding of what a websocket is, and WHY it exists. The next step is to run through an example. 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<br>
