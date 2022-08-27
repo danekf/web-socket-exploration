@@ -133,7 +133,13 @@ curl https://github.com/danekf/web-socket-exploration#What%20is%20a%20web%20sock
 ## References :
 <ul>
 <li></li>
+<li></li>
+<li>https://www.wallarm.com/what/a-simple-explanation-of-what-a-websocket-is</li>
+<li>https://betterprogramming.pub/sending-type-safe-http-requests-with-go-eb5bd1f91558</li>
+<li>https://www.geeksforgeeks.org/what-is-web-socket-and-how-it-is-different-from-the-http/</li>
+<li>https://pusher.com/tutorials/build-a-realtime-stock-ticker-with-ruby-and-pusher-channels/</li>
 <li>https://sookocheff.com/post/networking/how-do-websockets-work/</li>
+<li>https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API</li>
 
 
 </ul>
