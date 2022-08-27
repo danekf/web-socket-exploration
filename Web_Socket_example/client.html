@@ -10,7 +10,7 @@
 const ws = new WebSocket("ws://localhost:8080");
 ws.addEventListener("open", () =>{
   console.log("We are connected");
-  ws.send("How are you?");
+  ws.send("Web Socket is awesome!");
 });
  
 ws.addEventListener('message', function (event) {
