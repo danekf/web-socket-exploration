@@ -53,6 +53,7 @@ npm run start-server
 
 ## Roadmap
 <ul>
+<li>[ ]Implement a simple ability for the server to send data that will then be shown on the client website.</li>
 <li>[ ]Implement a full chat client using <a href = "https://www.piesocket.com/docs/3.0/javascript-client">the piesocket walkthrough.</a></li>
 
 </ul>

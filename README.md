@@ -108,7 +108,7 @@ curl https://github.com/danekf/web-socket-exploration#What%20is%20a%20web%20sock
 
 ## A Deeper Dive
 <p>Now that we have an understanding of what a websocket is, and WHY it exists. The next step is to run through an example of a simple web socket server/client.</p>
-<p>The chosen example will use NodeJs and the websocket npm package to create a simple websocket server and client.</p>
+<p>The chosen example will use NodeJs and the websocket npm package to create a simple websocket server and client to show the simplicity of establishing a connection.</p>
 <a href = https://github.com/danekf/web-socket-exploration/tree/main/Web_Socket_example>Click here to explore my solution</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
