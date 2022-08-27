@@ -84,15 +84,12 @@ curl https://github.com/danekf/web-socket-exploration#What%20is%20a%20web%20sock
 <br>
 
 ## What is a web socket
-<p>A web socket is a protocol used in the client/server model, much like HTTP, but is a continous communication between the client and the server. The request begins much in the same way as an HTTP request but the requested address starts with 'ws:' rather than 'http:'.</p>
+<p>A web socket is a protocol used in the client/server model, much like HTTP, but is a continous communication between the client and the server. The request begins much in the same way as an HTTP request but the requested address starts with 'ws:' rather than 'http:'. However the protocol is what is defined as a 'framed' protocol. This means that each time data is sent between the client and the server it follows a standard format, with regulated size and use for each 'chunk' of that data. One such example of the standard is the RFC6455 framing protocol,  which <a href = "https://www.rfc-editor.org/rfc/rfc6455#section-5.2">this</a> article covers in great technical detail.</p>
 
-<p>An example connection request from a client will include a line such as this:</p>
 
-```sh
-# 8080 is an example dev port
-ws://examplewebsite.com:8080/serverToInteractwith.php
-```
 <p>Once the server receives the request, instead of returning an HTTP response, it will returns a 'handshake' instead. This confirms to the client that the request was received and sends the data required to complete the connection.</p>
+
+<p>For example,</p>
 <p>At this point, the client and server will remain in constant communication until either one chooses to terminate the connection (or the connection is lost). 
 <p></p>
 <p>Here is an example image, taken from geeksforgeeks.org which illustrates this clearly.</p>
@@ -101,11 +98,13 @@ ws://examplewebsite.com:8080/serverToInteractwith.php
       <img src="images/WebSocket-Connection.png" width='50%'>
   </a>
 </div>
-<p>Once the communication is established, both the client and the server can send data to each other in a full duplex manner. This means that they are both able to send data at any point, including when data is being sent by the other. This is a much more ideal protocol for examples such as a live chat, or for an online game.</p>
+<p>Once the communication is established, both the client and the server can send data to each other in a full duplex manner. This means that they are both able to send data at any point, including when data is being sent by the other. This is a much more ideal protocol for examples such as a live chat, or for an online game since both parties are actively listening at all times.</p>
 <p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
+<br>
+
 
 ## A Deeper Dive
 <p>Now that we have an understanding of what a websocket is, and WHY it exists. The next step is to run through an example of a simple web socket server/client.</p>
@@ -125,8 +124,16 @@ ws://examplewebsite.com:8080/serverToInteractwith.php
 <br>
 
 ## Final Thoughts
+<p>While web socket is very flexible and useful when sending data, it is more complex to setup and its power might not be worth the extra development time for simple requests. A best practice would be to set out your requirements, if your application requires frequent back and forth data, such as realtime updates, then consider a web socket for that element.</p>
 
+<p>Otherwise it would seem best to implement a more simple HTTP request. </p>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 
 ## References :
+<ul>
+<li></li>
+<li>https://sookocheff.com/post/networking/how-do-websockets-work/</li>
+
+
+</ul>

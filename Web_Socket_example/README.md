@@ -12,6 +12,6 @@
 </details>
 
 ## Intro
-<p>This section runs through a simple NodeJS websocket server and client.
+<p>This section runs through a simple NodeJS websocket server and client to build a chat client.
 <br>
-<a href = "https://www.piesocket.com/blog/nodejs-websocket">Reference to walkthrough</a>
+<a href = "https://www.piesocket.com/docs/3.0/javascript-client">Reference to walkthrough</a>
