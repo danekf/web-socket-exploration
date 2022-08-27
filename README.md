@@ -119,14 +119,14 @@ curl https://github.com/danekf/web-socket-exploration#What%20is%20a%20web%20sock
 <p>For self hosting, popular servers include <a href='https://faye.jcoglan.com/'>FAYE</a> for Ruby or <a href='https://www.npmjs.com/package/websocket'>websocket</a> in NodeJS (as seen with the Deeper Dive example). A self hosted solution, while the most complex solution, is the most flexible. You are able to tailor each step of the process yourself and optimize yourself.</p>
 <p>However, while it is easy to setup a simple web socket server and client, it may be of interest to leverage a managed solution.</p>
 
-<p>A managed solution, such as <a href="">Pusher</a> offer pre-built solutions to lower development time and allows your team to focus on what you want your application to achieve, rather than implementing the web socket. They also have the ability to scale solutions easily as your application use grows, once again lowering the development burden. For a smaller team this is a very attractive prospect and is well worth considering when you want to focus your teams attention to other features.</p>
+<p>A managed solution, such as <a href="">Pusher</a> offer pre-built solutions to lower development time and allows your team to focus on what you want your application to achieve, rather than implementing the web socket. They also have the ability to scale solutions easily as your application use grows, once again lowering the development burden. For a smaller team this is a very attractive prospect and is well worth considering when you want to focus your teams attention to other features. A pre built solution also allows for easier addition of realtime data later into development, when a smaller subset of realtime features is required.</p>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 
 ## Final Thoughts
 <p>While web socket is very flexible and useful when sending data, it is more complex to setup and its power might not be worth the extra development time for simple requests. A best practice would be to set out your requirements, if your application requires frequent back and forth data, such as realtime updates, then consider a web socket for that element.</p>
 
-<p>Otherwise it would seem best to implement a more simple HTTP request. </p>
+<p>Otherwise it would seem best to implement a more simple HTTP request. Should the need arise to get some real time data, it is possible to implement at a later date, whether it is a custom solution or a third party one. </p>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 
