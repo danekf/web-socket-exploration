@@ -4,9 +4,9 @@
 
 <a name="Intro"></a>
 
-<p>As developers, we need to remain aware of the use cases and limitations of the communication protocols we use. Each protocol will have its own pros/cons. Differences include, but are not limited to, how a protocol handles encoding, confirmation of receipt, error handling, flow control, queuing, etc...
+<p>As developers, we need to remain aware of the use cases and limitations of the communication protocols we interact with. Each protocol will have its own pros/cons. Differences include, but are not limited to, how a protocol handles encoding, confirmation of receipt, error handling, flow control, queuing, etc...
 
-As web developpers we deal mostly with the client-server model. And we are most familiar with HTTP protocol. However there is another option that is favoured when a site requires specific features such as integrated chat. That protocol is called Web Socket.
+As web developers we deal mostly with the client-server model and are familiar with the HTTP protocol. However there is another option for protocol that is favoured when a site requires specific features that use real time data, such as live chats or data for a multiplayer game. That protocol is called Web Socket.
 
 This repository aims to explore web sockets on a high level through explanation and demonstration.
 
@@ -35,13 +35,13 @@ This repository aims to explore web sockets on a high level through explanation 
 <p>The client is the end user who wants to access or modify this data.</p>
 
 <br>
-<p>In order to use that data the client will make a request to the server, and the server will respond withthe formatted data. The major difference between an HTTP request and a web socket is with how exactly this communication is established.</p>
+<p>In order to use that data the client will make a request to the server, and the server will respond with the formatted data. The major difference between an HTTP request and a web socket is with how this communication is established and maintained.</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 
 ## How does an HTTP request function
-<p>An HTTP request functions as a SINGLE interaction between a client and a server. The client reaches out to the server and will generally ask for data to be given to it (a GET request) or to modify data on the server with supplied information (a PUT request). Once the response is sent from the server, and confirmed received (or times out) the connection is closed.</p>
+<p>An HTTP request functions as a SINGLE interaction between a client and a server. The client reaches out to the server and will ask for data to be given to it (a GET request) or to modify data on the server with supplied information (a PUT request). Once the response is sent from the server, and the client has confirmed receipt the connection is closed.(The connection will also close if the client has not confirmed receipt of data within a configured amount of time, this would be a timeout condition.)</p>
 
 <p>Below is an example of a request from a client using axios, which is a module to simplify requests for JavaScript.</p>
 
@@ -59,9 +59,9 @@ const getThisRepo = () =>{
 }
 ```
 
-<p>This example illustrates one way the browser would have reached out to a DNS provider to receive THIS github repository. The client formulates a '.get' request and 'then' waits for the response from the server. Once a response is received, the connection is closed and then "doesSomething" with the response. </p>
+<p>This example illustrates one way the browser would have reached out to a DNS (Domain Name System) provider to receive THIS github repository. The client formulates a '.get' request and 'then' waits for the response from the server. Once a response is received, the connection is closed and then "doesSomething" with the response. </p>
 
-Alternatively we could make a request using the command line command CURL. In this example we would just get the raw data required to render and run the webpage. This can be run in any modern terminal. 
+Alternatively we could make a request using the command line action "CURL". In this example we would get the raw data required to render and run the webpage. This can be run in any modern terminal. 
 <br>
 
 ```
@@ -76,20 +76,20 @@ curl https://github.com/danekf/web-socket-exploration#What%20is%20a%20web%20sock
     </a>
 </div>
 
-<p>Unfortunately this method of data transfer has its limitations. suppose we wanted to start a chat on a webpage. How would we handle this?We might need a client to check at intervals for new data but how would we set this interval? Do we really want to establish a brand new connection every time we need to get or send data? </p>
+<p>Unfortunately this method of data transfer has its limitations. suppose we wanted to start a chat on a webpage. How would we handle this? We might need a client to check at intervals for new data, but deciding on this interval would end up being complex. We do not want to need to establish a brand new connection every time we need to get or send data. </p>
 <p>What if we looked at a more complex situation such as an online multiplayer game where data needs to be sent and received very quickly. Making multiple requests, and closing them each time would be much too intensive and introduce issues where data is not received in time.</p>
-<p>It would be ideal to ahve the client and server remain connected until the interaction reaches its conclusion, regardless of how long that may take. This is the issue that web socket attempts to solve.</p>
+<p>It would be ideal to have the client and server remain connected until the interaction reaches its conclusion, regardless of how long that may take. This is the issue that web socket attempts to solve.</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>  
 <br>
 
 ## What is a web socket
-<p>A web socket is a protocol used in the client/server model, much like HTTP, but is a continous communication between the client and the server. The request begins much in the same way as an HTTP request but the requested address starts with 'ws:' rather than 'http:'. However the protocol is what is defined as a 'framed' protocol. This means that each time data is sent between the client and the server it follows a standard format, with regulated size and use for each 'chunk' of that data. One such example of the standard is the RFC6455 framing protocol,  which <a href = "https://www.rfc-editor.org/rfc/rfc6455#section-5.2">this</a> article covers in great technical detail.</p>
+<p>A web socket is a protocol used in the client/server model, much like HTTP, but is a continuous communication between the client and the server. The request begins in a similar way to an HTTP request but the requested address starts with 'ws:' rather than 'http:'. However the protocol is what is defined as a 'framed' protocol. This means that each time data is sent between the client and the server it follows a standard format, with regulated size and use for each 'chunk' of that data. One such example of the standard is the RFC6455 framing protocol,  which <a href = "https://www.rfc-editor.org/rfc/rfc6455#section-5.2">this</a> article covers in great technical detail.</p>
 
 
-<p>Once the server receives the request, instead of returning an HTTP response, it will returns a 'handshake' instead. This confirms to the client that the request was received and sends the data required to complete the connection.</p>
+<p>Once the server receives the request, instead of returning an HTTP response, it will return a 'handshake'. This confirms to the client that the request was received and sends the data required to complete the connection.</p>
 
-<p>For example,</p>
+
 <p>At this point, the client and server will remain in constant communication until either one chooses to terminate the connection (or the connection is lost). 
 <p></p>
 <p>Here is an example image, taken from geeksforgeeks.org which illustrates this clearly.</p>
@@ -115,11 +115,11 @@ curl https://github.com/danekf/web-socket-exploration#What%20is%20a%20web%20sock
 <br>
 
 ## Managed Solution VS Self Hosted Server
-<p>When looking at implementing a web socket, the question final question is whether to self host a solution or use a third party managed solution.</p>
+<p>When looking at implementing a web socket, on of the final questions to ask ourselves is whether to self host a solution or use a third party managed solution.</p>
 <p>For self hosting, popular servers include <a href='https://faye.jcoglan.com/'>FAYE</a> for Ruby or <a href='https://www.npmjs.com/package/websocket'>websocket</a> in NodeJS (as seen with the Deeper Dive example). A self hosted solution, while the most complex solution, is the most flexible. You are able to tailor each step of the process yourself and optimize yourself.</p>
-<p>However, while it is easy to setup a simple web socket server and client, it may be of interest to leverage a managed solution.</p>
+<p>While it is easy to setup a simple web socket server and client, it may be of interest to leverage a managed solution.</p>
 
-<p>A managed solution, such as <a href="">Pusher</a> offer pre-built solutions to lower development time and allows your team to focus on what you want your application to achieve, rather than implementing the web socket. They also have the ability to scale solutions easily as your application use grows, once again lowering the development burden. For a smaller team this is a very attractive prospect and is well worth considering when you want to focus your teams attention to other features. A pre built solution also allows for easier addition of realtime data later into development, when a smaller subset of realtime features is required.</p>
+<p>A managed solution, such as <a href="">Pusher</a> offers pre-built solutions to lower development time and allows your team to focus on what you want your application to achieve, rather than implementing the web socket. They also have the ability to scale solutions easily as your application use grows, once again lowering the development burden. For a smaller team this is a very attractive prospect and is well worth considering when you want to focus your team's attention on other features. A pre-built solution also allows for easier addition of realtime data later into development, when a smaller subset of realtime features is required.</p>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 
